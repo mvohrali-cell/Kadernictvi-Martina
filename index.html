@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadeřnictví Martina | Zábřeh na Moravě</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        
+        :root {
+            --color-champagne: #faf7f2;
+            --color-gold: #b45309;
+            --color-slate: #1e293b;
+        }
+
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--color-champagne); }
+        
+        .fade-in { animation: fadeIn 1.2s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="text-slate-900 overflow-x-hidden">
+
+    <!-- Navigace -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-orange-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tighter">
+                MARTINA <span class="text-orange-700 italic font-serif">Kadeřnictví</span>
+            </div>
+            <div class="hidden md:flex space-x-8 font-bold text-sm uppercase tracking-widest text-slate-500">
+                <a href="#o-mne" class="hover:text-orange-700 transition">O mně</a>
+                <a href="#sluzby" class="hover:text-orange-700 transition">Služby</a>
+                <a href="#kontakt" class="bg-slate-900 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition">Objednat se</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Sekce -->
+    <header class="relative pt-32 pb-20 px-6 text-center">
+        <div class="max-w-4xl mx-auto fade-in">
+            <span class="text-orange-700 font-bold tracking-[0.3em] text-xs uppercase mb-4 block">Zábřeh na Moravě // Od roku 2001</span>
+            <h1 class="text-6xl md:text-8xl font-bold mb-8 italic leading-tight text-slate-900">
+                Vaše krása je <br><span class="text-orange-700">mou vášní.</span>
+            </h1>
+            <p class="text-xl text-slate-500 mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
+                Přes 23 let zkušeností, individuální přístup a precizní styling pro každou příležitost.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#sluzby" class="px-10 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-orange-700 transition shadow-xl">Nabídka služeb</a>
+                <a href="#kontakt" class="px-10 py-4 border-2 border-slate-900 rounded-full font-bold hover:bg-slate-50 transition">Kde mě najdete</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- O mně / USP -->
+    <section id="o-mne" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-6 italic text-slate-900">Martina Vohralíková</h2>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    Svoji dráhu jsem zahájila v roce 2001. Za tu dobu jsem prošla stovkami proměn a školení. Zakládám si na tom, že vlasy jsou korunou každého člověka, a proto vyžadují tu nejlepší péči.
+                </p>
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="border-l-4 border-orange-700 pl-4">
+                        <span class="block text-3xl font-bold text-slate-900">23+</span>
+                        <span class="text-sm text-slate-400 font-bold uppercase tracking-widest">Let praxe</span>
+                    </div>
+                    <div class="border-l-4 border-orange-700 pl-4">
+                        <span class="block text-3xl font-bold text-slate-900">Top</span>
+                        <span class="text-sm text-slate-400 font-bold uppercase tracking-widest">Technologie</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-stone-100 rounded-[3rem] p-10 text-center border border-stone-200">
+                 <i class="fa-solid fa-gem text-5xl text-orange-700 mb-6"></i>
+                 <h3 class="text-2xl font-bold mb-4">Svatby & Akce</h3>
+                 <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                    Specializuji se na svatební styling a česání na velké akce. Nabízím <strong>kompletní mobilitu</strong> – přijedu za Vámi domů nebo na místo konání.
+                 </p>
+                 <span class="inline-block px-4 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-black uppercase tracking-widest">Flexibilita & Dojezd</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Služby -->
+    <section id="sluzby" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold mb-16 text-center italic">Nabídka salonu</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Dámské -->
+                <div class="bg-white p-10 rounded-[2rem] border border-orange-50 shadow-sm hover:shadow-xl transition">
+                    <i class="fa-solid fa-venus text-3xl text-orange-700 mb-6"></i>
+                    <h4 class="text-2xl font-bold mb-4">Dámský střih</h4>
+                    <p class="text-slate-500 text-sm mb-6">Od klasiky po moderní trendy. Barvení, balayage a hloubková regenerace.</p>
+                    <span class="text-xl font-black text-slate-900">od 850 Kč</span>
+                </div>
+                <!-- Pánské -->
+                <div class="bg-white p-10 rounded-[2rem] border border-orange-50 shadow-sm hover:shadow-xl transition">
+                    <i class="fa-solid fa-mars text-3xl text-orange-700 mb-6"></i>
+                    <h4 class="text-2xl font-bold mb-4">Pánský střih</h4>
+                    <p class="text-slate-500 text-sm mb-6">Precizní střihy, úprava kontur a relaxační mytí. Moderní look pro muže.</p>
+                    <span class="text-xl font-black text-slate-900">od 350 Kč</span>
+                </div>
+                <!-- Svatby -->
+                <div class="bg-slate-900 p-10 rounded-[2rem] text-white shadow-2xl shadow-orange-200">
+                    <i class="fa-solid fa-crown text-3xl text-orange-400 mb-6"></i>
+                    <h4 class="text-2xl font-bold mb-4">Svatební servis</h4>
+                    <p class="text-slate-400 text-sm mb-6">Individuální zkouška, styling nevěsty a svatebčanů přímo na místě.</p>
+                    <span class="text-xl font-black text-orange-400">Dle domluvy</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt" class="py-24 bg-white px-6">
+        <div class="max-w-4xl mx-auto bg-stone-50 rounded-[3rem] overflow-hidden shadow-2xl flex flex-col md:flex-row">
+            <div class="p-12 md:w-1/2 bg-slate-900 text-white">
+                <h2 class="text-4xl font-bold mb-8 italic">Rezervace</h2>
+                <div class="space-y-6">
+                    <p class="flex items-center"><i class="fa-solid fa-phone mr-4 text-orange-400"></i> +420 777 123 456</p>
+                    <p class="flex items-center"><i class="fa-solid fa-location-dot mr-4 text-orange-400"></i> Salon: Zábřeh na Moravě</p>
+                    <p class="flex items-center text-slate-400 text-sm italic">Sídlo: Nový Malín 1027, 788 03</p>
+                </div>
+                <hr class="my-10 border-white/10">
+                <p class="text-xs font-bold uppercase tracking-widest text-orange-400">Pracovní doba dle domluvy</p>
+            </div>
+            <div class="p-12 md:w-1/2">
+                <form action="https://formspree.io/f/XXXXXX" method="POST" class="space-y-4">
+                    <input type="text" name="name" placeholder="Vaše jméno" required class="w-full p-4 bg-white rounded-xl border-none ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-600 outline-none font-semibold">
+                    <input type="tel" name="phone" placeholder="Telefon" required class="w-full p-4 bg-white rounded-xl border-none ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-600 outline-none font-semibold">
+                    <textarea name="message" placeholder="O jakou službu máte zájem?" rows="3" class="w-full p-4 bg-white rounded-xl border-none ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-600 outline-none font-medium"></textarea>
+                    <button type="submit" class="w-full py-4 bg-orange-700 text-white rounded-xl font-black hover:bg-orange-800 transition shadow-lg shadow-orange-200">ODESLAT POPTÁVKU</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 text-center text-slate-400 text-xs font-bold tracking-widest uppercase">
+        &copy; 2026 Kadeřnictví Martina | <span class="text-slate-900">Vohralík Labs</span> Design
+    </footer>
+
+</body>
+</html>
