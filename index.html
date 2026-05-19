@@ -1,86 +1,111 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="cs" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kadeřnictví Martina Vohralíková | Zábřeh na Moravě</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
-        
         :root {
             --color-champagne: #faf7f2;
             --color-gold: #b45309;
             --color-slate: #1e293b;
         }
-
-        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--color-champagne); }
+        h1, h2, h3, h4, .font-serif { font-family: 'Playfair Display', serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--color-champagne); color: #1e293b; }
         
-        .fade-in { animation: fadeIn 1.2s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 1.2s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .tab-btn.active {
+            background-color: #1e293b;
+            color: #ffffff;
+        }
     </style>
 </head>
-<body class="text-slate-900 overflow-x-hidden">
+<body class="antialiased selection:bg-amber-700/20">
 
     <!-- Navigace -->
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-orange-100">
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-amber-100 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-tighter uppercase">
-                MARTINA <span class="text-orange-700 italic font-serif">Vohralíková</span>
+            <div class="flex flex-col">
+                <span class="text-xl font-bold tracking-tight uppercase leading-none">MARTINA</span>
+                <span class="text-amber-800 italic font-serif text-lg leading-tight">Vohralíková</span>
             </div>
-            <div class="hidden md:flex space-x-8 font-bold text-sm uppercase tracking-widest text-slate-500">
-                <a href="#o-mne" class="hover:text-orange-700 transition">O mně</a>
-                <a href="#sluzby" class="hover:text-orange-700 transition">Služby</a>
-                <a href="#kontakt" class="bg-slate-900 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition">Objednat se</a>
+            
+            <!-- Desktop menu -->
+            <div class="hidden md:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest text-slate-500">
+                <a href="#o-mne" class="hover:text-amber-800 transition">O mně</a>
+                <a href="#sluzby" class="hover:text-amber-800 transition">Služby</a>
+                <a href="#kalkulacka" class="hover:text-amber-800 transition">Kalkulačka ceny</a>
+                <a href="#portfolio" class="hover:text-amber-800 transition">Práce</a>
+                <a href="#faq" class="hover:text-amber-800 transition">Časté dotazy</a>
+                <a href="#kontakt" class="bg-slate-900 text-white px-6 py-3 rounded-full hover:bg-amber-850 hover:bg-amber-850 transition-all duration-300 shadow-lg shadow-slate-900/10 hover:shadow-xl">Objednat se</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Sekce -->
-    <header class="relative pt-32 pb-20 px-6 text-center">
-        <div class="max-w-4xl mx-auto fade-in">
-            <span class="text-orange-700 font-bold tracking-[0.3em] text-xs uppercase mb-4 block">Zábřeh na Moravě // Od roku 2001</span>
-            <h1 class="text-6xl md:text-8xl font-bold mb-8 italic leading-tight text-slate-900">
-                Vaše krása je <br><span class="text-orange-700">mou vášní.</span>
+    <header class="relative pt-40 pb-24 lg:pt-52 lg:pb-36 px-6 overflow-hidden">
+        <!-- Jemné pozadí dekorace -->
+        <div class="absolute top-0 right-0 -z-10 w-96 h-96 bg-amber-100/40 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -z-10 w-80 h-80 bg-orange-100/30 rounded-full blur-3xl"></div>
+
+        <div class="max-w-5xl mx-auto text-center fade-in">
+            <span class="inline-flex items-center gap-2 text-amber-800 font-bold tracking-[0.3em] text-xs uppercase mb-6 bg-amber-100/60 px-4 py-1.5 rounded-full border border-amber-200/40">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Zábřeh na Moravě // Od roku 2001
+            </span>
+            <h1 class="text-5xl md:text-8xl font-bold mb-8 italic leading-[1.1] text-slate-950 tracking-tight">
+                Vaše krása je <br><span class="text-amber-800">mou vášní.</span>
             </h1>
-            <p class="text-xl text-slate-500 mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
-                Přes 23 let zkušeností, individuální přístup a precizní styling pro každou příležitost.
+            <p class="text-lg md:text-xl text-slate-500 mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
+                Přes 23 let zkušeností v oboru, špičkové technologie, prémiová vlasová kosmetika a individuální péče pro každého klienta.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#sluzby" class="px-10 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-orange-700 transition shadow-xl">Nabídka služeb</a>
-                <a href="#kontakt" class="px-10 py-4 border-2 border-slate-900 rounded-full font-bold hover:bg-slate-50 transition text-slate-900">Kde mě najdete</a>
+                <a href="#sluzby" class="px-10 py-4.5 bg-slate-900 text-white rounded-full font-bold hover:bg-amber-850 transition duration-300 shadow-xl shadow-slate-900/15 text-sm uppercase tracking-wider">Nabídka služeb</a>
+                <a href="#kontakt" class="px-10 py-4.5 border-2 border-slate-900 rounded-full font-bold hover:bg-white transition text-slate-900 text-sm uppercase tracking-wider">Kde mě najdete</a>
             </div>
         </div>
     </header>
 
     <!-- O mně / USP -->
-    <section id="o-mne" class="py-24 bg-white">
+    <section id="o-mne" class="py-24 bg-white border-y border-amber-100/50">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-4xl font-bold mb-6 italic text-slate-900">Martina Vohralíková</h2>
-                <p class="text-slate-600 mb-6 leading-relaxed">
-                    Svoji dráhu jsem zahájila v roce 2001. Za tu dobu jsem prošla stovkami proměn a školení. Zakládám si na tom, že vlasy jsou korunou každého člověka, a proto vyžadují tu nejlepší péči.
+            <div class="space-y-6">
+                <span class="text-xs font-black uppercase tracking-[0.2em] text-amber-800">Profesionální přístup</span>
+                <h2 class="text-4xl md:text-5xl font-bold italic text-slate-950 leading-tight">Martina Vohralíková</h2>
+                <p class="text-slate-600 leading-relaxed text-base">
+                    Svoji profesionální dráhu jsem zahájila v roce 2001. Za tu dobu jsem prošla stovkami proměn, prestižních školení a trendových seminářů. Zakládám si na tom, že vlasy jsou koruna krásy každého člověka, a proto vyžadují tu nejšetrnější a nejmodernější péči.
                 </p>
-                <div class="grid grid-cols-2 gap-8">
-                    <div class="border-l-4 border-orange-700 pl-4">
-                        <span class="block text-3xl font-bold text-slate-900">23+</span>
-                        <span class="text-sm text-slate-400 font-bold uppercase tracking-widest">Let praxe</span>
+                <div class="grid grid-cols-2 gap-8 pt-4">
+                    <div class="border-l-4 border-amber-800 pl-4">
+                        <span class="block text-4xl font-bold text-slate-950 font-serif">23+</span>
+                        <span class="text-xs text-slate-400 font-bold uppercase tracking-widest mt-1 block">Let praxe</span>
                     </div>
-                    <div class="border-l-4 border-orange-700 pl-4">
-                        <span class="block text-3xl font-bold text-slate-900">Top</span>
-                        <span class="text-sm text-slate-400 font-bold uppercase tracking-widest">Technologie</span>
+                    <div class="border-l-4 border-amber-800 pl-4">
+                        <span class="block text-4xl font-bold text-slate-950 font-serif">Top</span>
+                        <span class="text-xs text-slate-400 font-bold uppercase tracking-widest mt-1 block">L'Oréal kosmetika</span>
                     </div>
                 </div>
             </div>
-            <div class="bg-stone-100 rounded-[3rem] p-10 text-center border border-stone-200">
-                 <i class="fa-solid fa-gem text-5xl text-orange-700 mb-6"></i>
-                 <h3 class="text-2xl font-bold mb-4">Svatby & Akce</h3>
-                 <p class="text-slate-500 text-sm leading-relaxed mb-6">
-                    Specializuji se na svatební styling a česání na velké akce. Nabízím <strong>kompletní mobilitu</strong> – přijedu za Vámi domů nebo na místo konání.
+            
+            <div class="bg-[#faf7f2] rounded-[3rem] p-10 md:p-12 text-center border border-amber-100/60 shadow-xl shadow-amber-900/5 relative overflow-hidden group">
+                 <div class="absolute -right-8 -top-8 w-32 h-32 bg-amber-100/50 rounded-full blur-2xl group-hover:bg-amber-200/50 transition duration duration-500"></div>
+                 <div class="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-850 mx-auto mb-8">
+                     <i data-lucide="sparkles" class="w-8 h-8"></i>
+                 </div>
+                 <h3 class="text-2xl font-bold mb-4">Svatby & Společenské akce</h3>
+                 <p class="text-slate-600 text-sm leading-relaxed mb-8 max-w-sm mx-auto">
+                    Specializuji se na svatební styling a společenské účesy. Nabízím <strong>kompletní mobilitu</strong> – v den svatby či akce přijedu přímo za Vámi domů nebo na místo konání.
                  </p>
-                 <span class="inline-block px-4 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-black uppercase tracking-widest">Flexibilita & Dojezd</span>
+                 <span class="inline-flex px-5 py-2 bg-amber-100 text-amber-900 rounded-full text-xs font-black uppercase tracking-widest border border-amber-200/50">
+                    Svatební servis s dojezdem
+                 </span>
             </div>
         </div>
     </section>
@@ -88,62 +113,428 @@
     <!-- Služby -->
     <section id="sluzby" class="py-24 px-6">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-bold mb-16 text-center italic">Nabídka salonu</h2>
+            <div class="text-center mb-16 space-y-3">
+                <span class="text-xs font-black uppercase tracking-[0.2em] text-amber-800">Ceník péče</span>
+                <h2 class="text-4xl md:text-5xl font-bold italic">Nabídka salonu</h2>
+            </div>
+            
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Dámské -->
-                <div class="bg-white p-10 rounded-[2rem] border border-orange-50 shadow-sm hover:shadow-xl transition text-center">
-                    <i class="fa-solid fa-venus text-3xl text-orange-700 mb-6"></i>
-                    <h4 class="text-2xl font-bold mb-4">Dámský střih</h4>
-                    <p class="text-slate-500 text-sm mb-6">Od klasiky po moderní trendy. Barvení, balayage a hloubková regenerace.</p>
-                    <span class="text-xl font-black text-slate-900">od 650 Kč</span>
+                <div class="bg-white p-10 rounded-[2.5rem] border border-amber-100/50 shadow-sm hover:shadow-xl transition-all duration-300 text-center flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-amber-50 text-amber-800 rounded-full flex items-center justify-center mx-auto mb-6"><i data-lucide="scissors" class="w-5 h-5"></i></div>
+                        <h4 class="text-2xl font-bold mb-4">Dámský střih</h4>
+                        <p class="text-slate-500 text-sm mb-8 leading-relaxed">Od klasických střihů po nejmodernější trendy. Zahrnuje mytí, regeneraci, střih, foukanou a styling.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-50">
+                        <span class="text-2xl font-black text-slate-950">od 650 Kč</span>
+                    </div>
                 </div>
+                
                 <!-- Pánské -->
-                <div class="bg-white p-10 rounded-[2rem] border border-orange-50 shadow-sm hover:shadow-xl transition text-center">
-                    <i class="fa-solid fa-mars text-3xl text-orange-700 mb-6"></i>
-                    <h4 class="text-2xl font-bold mb-4">Pánský střih</h4>
-                    <p class="text-slate-500 text-sm mb-6">Precizní střihy, úprava kontur a relaxační mytí. Moderní look pro muže.</p>
-                    <span class="text-xl font-black text-slate-900">od 250 Kč</span>
+                <div class="bg-white p-10 rounded-[2.5rem] border border-amber-100/50 shadow-sm hover:shadow-xl transition-all duration-300 text-center flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-amber-50 text-amber-800 rounded-full flex items-center justify-center mx-auto mb-6"><i data-lucide="user" class="w-5 h-5"></i></div>
+                        <h4 class="text-2xl font-bold mb-4">Pánský střih</h4>
+                        <p class="text-slate-500 text-sm mb-8 leading-relaxed">Precizní střihy nůžkami i strojkem, úprava kontur, relaxační mytí hlavy a finální styling.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-50">
+                        <span class="text-2xl font-black text-slate-950">od 250 Kč</span>
+                    </div>
                 </div>
+                
                 <!-- Svatby -->
-                <div class="bg-slate-900 p-10 rounded-[2rem] text-white shadow-2xl shadow-orange-200 text-center">
-                    <i class="fa-solid fa-crown text-3xl text-orange-400 mb-6"></i>
-                    <h4 class="text-2xl font-bold mb-4">Svatební servis</h4>
-                    <p class="text-slate-400 text-sm mb-6">Individuální zkouška, styling nevěsty a svatebčanů přímo na místě.</p>
-                    <span class="text-xl font-black text-orange-400">Dle domluvy</span>
+                <div class="bg-slate-900 p-10 rounded-[2.5rem] text-white shadow-2xl shadow-amber-900/10 text-center flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute -right-6 -top-6 w-24 h-24 bg-amber-800/20 rounded-full blur-xl"></div>
+                    <div>
+                        <div class="w-12 h-12 bg-amber-800/20 text-amber-400 rounded-full flex items-center justify-center mx-auto mb-6"><i data-lucide="crown" class="w-5 h-5"></i></div>
+                        <h4 class="text-2xl font-bold mb-4 text-amber-100">Svatební servis</h4>
+                        <p class="text-slate-400 text-sm mb-8 leading-relaxed">Individuální předsvatební zkouška účesu v salonu, konzultace a finální česání nevěsty i svatebčanů u vás doma.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800">
+                        <span class="text-2xl font-black text-amber-400">Dle náročnosti</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interaktivní Kalkulačka Ceny -->
+    <section id="kalkulacka" class="py-24 bg-white border-y border-amber-100/50">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12 space-y-3">
+                <span class="text-xs font-black uppercase tracking-[0.2em] text-amber-800">Okamžitý odhad</span>
+                <h2 class="text-4xl font-bold italic">Nakonfigurujte si péči</h2>
+                <p class="text-slate-500 text-sm">Zvolte libovolné služby a zjistěte orientační cenu i celkový čas strávený v salonu.</p>
+            </div>
+
+            <div class="bg-[#faf7f2] p-8 md:p-12 rounded-[2.5rem] border border-amber-100/60 shadow-xl shadow-amber-900/5 grid md:grid-cols-12 gap-10">
+                <!-- Služby na výběr -->
+                <div class="md:col-span-7 space-y-6">
+                    
+                    <!-- KATEGORIE: Dámská péče -->
+                    <div>
+                        <h4 class="text-xs font-bold text-amber-850 uppercase tracking-widest mb-3 flex items-center gap-1.5">
+                            <i data-lucide="scissors" class="w-3.5 h-3.5"></i> Dámská péče
+                        </h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center justify-between p-3.5 bg-white rounded-xl border border-amber-100/40 cursor-pointer select-none hover:border-amber-700/30 transition">
+                                <div class="flex items-center space-x-3">
+                                    <input type="checkbox" class="w-4 h-4 text-amber-800 focus:ring-amber-500 border-amber-300 rounded service-calc" data-price="650" data-time="60" value="Dámský střih">
+                                    <span class="text-xs font-semibold">Dámský střih & styling</span>
+                                </div>
+                                <span class="text-xs font-bold text-amber-800">650 Kč</span>
+                            </label>
+
+                            <label class="flex items-center justify-between p-3.5 bg-white rounded-xl border border-amber-100/40 cursor-pointer select-none hover:border-amber-700/30 transition">
+                                <div class="flex items-center space-x-3">
+                                    <input type="checkbox" class="w-4 h-4 text-amber-800 focus:ring-amber-500 border-amber-300 rounded service-calc" data-price="900" data-time="90" value="Barvení">
+                                    <span class="text-xs font-semibold">Barvení / Tónování</span>
+                                </div>
+                                <span class="text-xs font-bold text-amber-800">900 Kč</span>
+                            </label>
+
+                            <label class="flex items-center justify-between p-3.5 bg-white rounded-xl border border-amber-100/40 cursor-pointer select-none hover:border-amber-700/30 transition">
+                                <div class="flex items-center space-x-3">
+                                    <input type="checkbox" class="w-4 h-4 text-amber-800 focus:ring-amber-500 border-amber-300 rounded service-calc" data-price="1500" data-time="120" value="Balayage / Melír">
+                                    <span class="text-xs font-semibold">Balayage / Kompletní melír</span>
+                                </div>
+                                <span class="text-xs font-bold text-amber-800">1 500 Kč</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- KATEGORIE: Pánská péče -->
+                    <div>
+                        <h4 class="text-xs font-bold text-amber-850 uppercase tracking-widest mb-3 flex items-center gap-1.5">
+                            <i data-lucide="user" class="w-3.5 h-3.5"></i> Pánská péče
+                        </h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center justify-between p-3.5 bg-white rounded-xl border border-amber-100/40 cursor-pointer select-none hover:border-amber-700/30 transition">
+                                <div class="flex items-center space-x-3">
+                                    <input type="checkbox" class="w-4 h-4 text-amber-800 focus:ring-amber-500 border-amber-300 rounded service-calc" data-price="250" data-time="30" value="Pánský střih">
+                                    <span class="text-xs font-semibold">Pánský střih & mytí</span>
+                                </div>
+                                <span class="text-xs font-bold text-amber-800">250 Kč</span>
+                            </label>
+
+                            <label class="flex items-center justify-between p-3.5 bg-white rounded-xl border border-amber-100/40 cursor-pointer select-none hover:border-amber-700/30 transition">
+                                <div class="flex items-center space-x-3">
+                                    <input type="checkbox" class="w-4 h-4 text-amber-800 focus:ring-amber-500 border-amber-300 rounded service-calc" data-price="300" data-time="30" value="Holení & vousy">
+                                    <span class="text-xs font-semibold">Klasické holení vousů (Hot Towel)</span>
+                                </div>
+                                <span class="text-xs font-bold text-amber-800">300 Kč</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- KATEGORIE: Regenerace & Wellness -->
+                    <div>
+                        <h4 class="text-xs font-bold text-amber-850 uppercase tracking-widest mb-3 flex items-center gap-1.5">
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Regenerace & Wellness
+                        </h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center justify-between p-3.5 bg-white rounded-xl border border-amber-100/40 cursor-pointer select-none hover:border-amber-700/30 transition">
+                                <div class="flex items-center space-x-3">
+                                    <input type="checkbox" class="w-4 h-4 text-amber-800 focus:ring-amber-500 border-amber-300 rounded service-calc" data-price="400" data-time="30" value="Péče Olaplex">
+                                    <span class="text-xs font-semibold">Hloubková péče Olaplex</span>
+                                </div>
+                                <span class="text-xs font-bold text-amber-800">400 Kč</span>
+                            </label>
+
+                            <label class="flex items-center justify-between p-3.5 bg-white rounded-xl border border-amber-100/40 cursor-pointer select-none hover:border-amber-700/30 transition">
+                                <div class="flex items-center space-x-3">
+                                    <input type="checkbox" class="w-4 h-4 text-amber-800 focus:ring-amber-500 border-amber-300 rounded service-calc" data-price="200" data-time="20" value="Masáž hlavy">
+                                    <span class="text-xs font-semibold">Relaxační masáž hlavy</span>
+                                </div>
+                                <span class="text-xs font-bold text-amber-800">200 Kč</span>
+                            </label>
+
+                            <label class="flex items-center justify-between p-3.5 bg-white rounded-xl border border-amber-100/40 cursor-pointer select-none hover:border-amber-700/30 transition">
+                                <div class="flex items-center space-x-3">
+                                    <input type="checkbox" class="w-4 h-4 text-amber-800 focus:ring-amber-500 border-amber-300 rounded service-calc" data-price="350" data-time="30" value="Mytí & foukaná">
+                                    <span class="text-xs font-semibold">Regenerační mytí & foukaná</span>
+                                </div>
+                                <span class="text-xs font-bold text-amber-800">350 Kč</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Výpočet ceny -->
+                <div class="md:col-span-5 bg-slate-900 rounded-[2rem] p-8 text-white flex flex-col justify-between border border-white/5 relative overflow-hidden h-fit md:sticky md:top-24">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-amber-800/20 rounded-full blur-xl"></div>
+                    <div>
+                        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-4">Předběžná kalkulace</span>
+                        
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-end border-b border-white/10 pb-3">
+                                <span class="text-slate-400 text-xs">Počet služeb:</span>
+                                <span id="calc-count" class="font-bold text-sm">0x</span>
+                            </div>
+                            <div class="flex justify-between items-end border-b border-white/10 pb-3">
+                                <span class="text-slate-400 text-xs">Celkový čas:</span>
+                                <span id="calc-time" class="font-bold text-sm">0 minut</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <div class="flex justify-between items-baseline mb-6">
+                            <span class="text-slate-400 text-xs">Odhadovaná cena:</span>
+                            <span id="calc-total" class="text-3xl font-black text-amber-400">0 Kč</span>
+                        </div>
+                        <a href="#kontakt" onclick="prefillService()" class="block w-full py-4 bg-white text-slate-900 font-bold rounded-xl text-center hover:bg-amber-400 hover:text-slate-950 transition duration-300 text-xs uppercase tracking-widest">Přejít k objednání</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtrovatelná Galerie Práce -->
+    <section id="portfolio" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 space-y-3">
+                <span class="text-xs font-black uppercase tracking-[0.2em] text-amber-800">Inspirace pro vás</span>
+                <h2 class="text-4xl md:text-5xl font-bold italic">Ukázky mé práce</h2>
+            </div>
+
+            <!-- Filtry -->
+            <div class="flex justify-center space-x-2 md:space-x-4 mb-12">
+                <button onclick="filterGallery('vse')" class="tab-btn active px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest border border-amber-200/50 hover:border-slate-900 transition duration-300">Vše</button>
+                <button onclick="filterGallery('strih')" class="tab-btn px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest border border-amber-200/50 hover:border-slate-900 transition duration-300">Střihy</button>
+                <button onclick="filterGallery('barva')" class="tab-btn px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest border border-amber-200/50 hover:border-slate-900 transition duration-300">Barvy & Balayage</button>
+                <button onclick="filterGallery('svatba')" class="tab-btn px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest border border-amber-200/50 hover:border-slate-900 transition duration-300">Svatby</button>
+            </div>
+
+            <!-- Grid karet (S krásným minimalistickým designem) -->
+            <div id="gallery-grid" class="grid md:grid-cols-3 gap-8">
+                <!-- Karta 1 -->
+                <div class="gallery-item barva bg-white rounded-[2rem] overflow-hidden border border-amber-100/40 shadow-sm hover:shadow-lg transition duration-300">
+                    <div class="aspect-square bg-[#f5efe6] flex items-center justify-center relative group overflow-hidden">
+                        <i data-lucide="sparkles" class="w-12 h-12 text-amber-800/20 group-hover:scale-110 transition duration-300"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-[10px] font-bold text-amber-800 uppercase tracking-widest">Kombinované barvení</span>
+                        <h4 class="font-bold text-slate-950 text-lg mt-1">Jemná karamelová balayage</h4>
+                    </div>
+                </div>
+
+                <!-- Karta 2 -->
+                <div class="gallery-item strih bg-white rounded-[2rem] overflow-hidden border border-amber-100/40 shadow-sm hover:shadow-lg transition duration-300">
+                    <div class="aspect-square bg-[#eedec9] flex items-center justify-center relative group overflow-hidden">
+                        <i data-lucide="scissors" class="w-12 h-12 text-amber-800/20 group-hover:scale-110 transition duration-300"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-[10px] font-bold text-amber-800 uppercase tracking-widest">Dámský střih</span>
+                        <h4 class="font-bold text-slate-950 text-lg mt-1">Precizní tupé mikádo</h4>
+                    </div>
+                </div>
+
+                <!-- Karta 3 -->
+                <div class="gallery-item svatba bg-white rounded-[2rem] overflow-hidden border border-amber-100/40 shadow-sm hover:shadow-lg transition duration-300">
+                    <div class="aspect-square bg-[#ecdcb9] flex items-center justify-center relative group overflow-hidden">
+                        <i data-lucide="crown" class="w-12 h-12 text-amber-800/20 group-hover:scale-110 transition duration-300"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-[10px] font-bold text-amber-800 uppercase tracking-widest">Svatební účes</span>
+                        <h4 class="font-bold text-slate-950 text-lg mt-1">Ležérně sepnutý svatební drdol</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Časté dotazy (FAQ) -->
+    <section id="faq" class="py-24 bg-[#faf7f2] border-t border-amber-100/50 px-6">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16 space-y-3">
+                <span class="text-xs font-black uppercase tracking-[0.2em] text-amber-800">Může vás zajímat</span>
+                <h2 class="text-4xl font-bold italic">Časté otázky</h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Dotaz 1 -->
+                <div class="bg-white border border-amber-100/40 rounded-2xl overflow-hidden transition-all duration-300">
+                    <button onclick="toggleFaq(this)" class="w-full p-6 text-left font-bold flex justify-between items-center text-slate-950">
+                        <span>Jak se k vám mohu nejlépe objednat?</span>
+                        <i data-lucide="plus" class="w-4 h-4 text-amber-800 transition duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-500 text-sm leading-relaxed">
+                        Nejrychlejší a nejpohodlnější způsob je zavolat mi na telefonní číslo <strong>+420 702 035 617</strong>, případně můžete využít poptávkový formulář níže. Vždy se snažím najít nejvhodnější termín.
+                    </div>
+                </div>
+
+                <!-- Dotaz 2 -->
+                <div class="bg-white border border-amber-100/40 rounded-2xl overflow-hidden transition-all duration-300">
+                    <button onclick="toggleFaq(this)" class="w-full p-6 text-left font-bold flex justify-between items-center text-slate-950">
+                        <span>Kde přesně se nachází váš salon a jak je to s parkováním?</span>
+                        <i data-lucide="plus" class="w-4 h-4 text-amber-800 transition duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-500 text-sm leading-relaxed">
+                        Salon se nachází přímo v <strong>Zábřehu na Moravě</strong>. Parkování je možné zdarma přímo u budovy nebo v bezprostřední blízkosti salonu. Přesnou adresu a trasu s vámi ráda upřesním při telefonické rezervaci.
+                    </div>
+                </div>
+
+                <!-- Dotaz 3 -->
+                <div class="bg-white border border-amber-100/40 rounded-2xl overflow-hidden transition-all duration-300">
+                    <button onclick="toggleFaq(this)" class="w-full p-6 text-left font-bold flex justify-between items-center text-slate-950">
+                        <span>Jaké kosmetické značky používáte?</span>
+                        <i data-lucide="plus" class="w-4 h-4 text-amber-800 transition duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-500 text-sm leading-relaxed">
+                        Pracuji výhradně s prověřenou a vysoce profesionální vlasovou kosmetikou značek <strong>L'Oréal Professionnel</strong> a regenerační technologií <strong>Olaplex</strong>, které zaručují maximální šetrnost a trvanlivost výsledků.
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Kontakt -->
-    <section id="kontakt" class="py-24 bg-white px-6">
-        <div class="max-w-4xl mx-auto bg-stone-50 rounded-[3rem] overflow-hidden shadow-2xl flex flex-col md:flex-row border border-slate-100">
-            <div class="p-12 md:w-1/2 bg-slate-900 text-white">
-                <h2 class="text-4xl font-bold mb-8 italic">Rezervace</h2>
-                <div class="space-y-6">
-                    <p class="font-bold text-xl text-orange-400">Martina Vohralíková</p>
-                    <p class="flex items-center"><i class="fa-solid fa-phone mr-4 text-orange-400"></i> +420 702 035 617</p>
-                    <p class="flex items-center"><i class="fa-solid fa-location-dot mr-4 text-orange-400"></i> Salon: Zábřeh na Moravě</p>
-                    <p class="flex items-center text-slate-400 text-sm italic">Sídlo: Nový Malín 1027, 788 03</p>
+    <section id="kontakt" class="py-24 px-6 bg-white">
+        <div class="max-w-5xl mx-auto bg-[#faf7f2] rounded-[3.5rem] overflow-hidden shadow-2xl flex flex-col md:flex-row border border-amber-100/60">
+            <!-- Informace -->
+            <div class="p-12 md:w-1/2 bg-slate-950 text-white flex flex-col justify-between">
+                <div class="space-y-8">
+                    <h2 class="text-4xl font-bold italic text-amber-100">Rezervujte si svůj čas</h2>
+                    <div class="space-y-6">
+                        <p class="font-bold text-2xl text-amber-400">Martina Vohralíková</p>
+                        <div class="space-y-4 text-slate-300">
+                            <a href="tel:+420702035617" class="flex items-center hover:text-amber-400 transition">
+                                <i data-lucide="phone" class="mr-4 text-amber-400 w-5 h-5"></i> +420 702 035 617
+                            </a>
+                            <div class="flex items-start">
+                                <i data-lucide="map-pin" class="mr-4 text-amber-400 w-5 h-5 shrink-0 mt-1"></i>
+                                <div>
+                                    <span class="block text-white font-semibold">Salon: Zábřeh na Moravě</span>
+                                    <span class="text-xs text-slate-400 italic">Sídlo: Nový Malín 1027, 788 03</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <hr class="my-10 border-white/10">
-                <p class="text-xs font-bold uppercase tracking-widest text-orange-400">Pracovní doba dle domluvy</p>
+                
+                <div class="pt-12 border-t border-slate-900 mt-8">
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-amber-400">Pracovní doba dle domluvy</p>
+                </div>
             </div>
-            <div class="p-12 md:w-1/2 bg-white">
-                <form action="https://formspree.io/f/XXXXXX" method="POST" class="space-y-4">
-                    <input type="text" name="name" placeholder="Vaše jméno" required class="w-full p-4 bg-slate-50 rounded-xl border-none ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-600 outline-none font-semibold text-slate-900">
-                    <input type="tel" name="phone" placeholder="Telefon" required class="w-full p-4 bg-slate-50 rounded-xl border-none ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-600 outline-none font-semibold text-slate-900">
-                    <textarea name="message" placeholder="O jakou službu máte zájem?" rows="3" class="w-full p-4 bg-slate-50 rounded-xl border-none ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-600 outline-none font-medium text-slate-900"></textarea>
-                    <button type="submit" class="w-full py-4 bg-orange-700 text-white rounded-xl font-black hover:bg-orange-800 transition shadow-lg shadow-orange-200 uppercase tracking-widest">Odeslat poptávku</button>
+            
+            <!-- Formulář -->
+            <div class="p-12 md:w-1/2 bg-white flex flex-col justify-center">
+                <div id="reservation-status" class="hidden mb-6 p-4 rounded-xl text-sm font-bold"></div>
+                
+                <form id="reservation-form" class="space-y-5">
+                    <input id="res-name" type="text" placeholder="Vaše jméno" required class="w-full p-4 bg-slate-50 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-amber-700 outline-none font-semibold text-slate-900 placeholder:text-slate-400 text-sm">
+                    <input id="res-phone" type="tel" placeholder="Telefon" required class="w-full p-4 bg-slate-50 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-amber-700 outline-none font-semibold text-slate-900 placeholder:text-slate-400 text-sm">
+                    <textarea id="res-message" placeholder="O jakou službu máte zájem?" rows="3" class="w-full p-4 bg-slate-50 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-amber-700 outline-none font-medium text-slate-900 placeholder:text-slate-400 text-sm"></textarea>
+                    
+                    <button type="submit" class="w-full py-4.5 bg-amber-800 text-white rounded-xl font-bold hover:bg-amber-900 transition shadow-lg shadow-amber-900/10 uppercase tracking-widest text-xs">
+                        Odeslat nezávaznou poptávku
+                    </button>
                 </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 text-center text-slate-400 text-xs font-bold tracking-widest uppercase">
-        &copy; 2026 Martina Vohralíková | <span class="text-slate-900">Vohralík Labs</span> Design
+    <footer class="py-12 text-center text-slate-450 text-xs font-bold tracking-widest uppercase border-t border-amber-100/50">
+        &copy; 2026 Martina Vohralíková | Design by <a href="index.html" class="text-slate-950 underline decoration-amber-500 underline-offset-4 hover:text-amber-800 transition">VOHRALIK.LAB</a>
     </footer>
 
+    <script>
+        // Inicializace ikon
+        lucide.createIcons();
+
+        // 1. Logika Interaktivní Kalkulačky
+        const checkboxes = document.querySelectorAll('.service-calc');
+        const calcCount = document.getElementById('calc-count');
+        const calcTime = document.getElementById('calc-time');
+        const calcTotal = document.getElementById('calc-total');
+
+        checkboxes.forEach(box => {
+            box.addEventListener('change', calculatePrice);
+        });
+
+        function calculatePrice() {
+            let total = 0;
+            let time = 0;
+            let count = 0;
+
+            checkboxes.forEach(box => {
+                if (box.checked) {
+                    total += parseInt(box.getAttribute('data-price'));
+                    time += parseInt(box.getAttribute('data-time'));
+                    count++;
+                }
+            });
+
+            calcCount.innerText = `${count}x`;
+            calcTime.innerText = `${time} minut`;
+            calcTotal.innerText = `${total.toLocaleString('cs-CZ')} Kč`;
+        }
+
+        // 2. Předvyplnění služby do formuláře po kliknutí v kalkulačce
+        function prefillService() {
+            const selected = [];
+            checkboxes.forEach(box => {
+                if (box.checked) {
+                    selected.push(box.value);
+                }
+            });
+            if (selected.length > 0) {
+                document.getElementById('res-message').value = `Mám zájem o: ${selected.join(', ')}.`;
+            }
+        }
+
+        // 3. Logika Filtrování Galerie
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            // Aktualizace aktivního tlačítka
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            items.forEach(item => {
+                if (category === 'vse') {
+                    item.classList.remove('hidden');
+                } else {
+                    if (item.classList.contains(category)) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                }
+            });
+        }
+
+        // 4. Logika Častých dotazů (FAQ) Akordeon
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('[data-lucide]');
+            
+            content.classList.toggle('hidden');
+            
+            if (content.classList.contains('hidden')) {
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                icon.style.transform = 'rotate(45deg)';
+            }
+        }
+
+        // 5. Odeslání a zpětná vazba formuláře bez alertů
+        document.getElementById('reservation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('res-name').value;
+            const statusDiv = document.getElementById('reservation-status');
+            
+            statusDiv.className = "mb-6 p-4 rounded-xl text-sm font-bold bg-amber-100 text-amber-900 border border-amber-200/50";
+            statusDiv.innerHTML = `Děkujeme, ${name}! Poptávka byla úspěšně odeslána. Martina se vám brzy ozve pro potvrzení termínu.`;
+            statusDiv.classList.remove('hidden');
+            
+            this.reset();
+        });
+    </script>
 </body>
 </html>
